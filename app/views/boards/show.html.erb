@@ -54,8 +54,8 @@
     <tr>
       <td><%= a_post.title %></td>
       <td><%= a_post.body %></td>
-      <td><%= a_post.created_at %></td>
-      <td><%= a_post.expires_on %></td>
+      <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
+      <td><%= a_post.expires_on.strftime("%b %e, %Y") %></td>
     </tr>
   <% end %>
 
@@ -77,77 +77,9 @@
     <tr>
       <td><%= a_post.title %></td>
       <td><%= a_post.body %></td>
-      <td><%= a_post.created_at %></td>
-      <td><%= a_post.expires_on %></td>
+      <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
+      <td><%= a_post.expires_on.strftime("%b %e, %Y") %></td>
     </tr>
   <% end %>
 
 </table>
-
-<hr>
-<hr>
-<hr>
-<!------------------------------ Boilerplate code - delete later ------------------------------>
-<div>
-  <div>
-    <a href="/boards">
-      Go back
-    </a>
-  </div>
-
-  <div>
-    <a href="/delete_board/<%= @the_board.id %>">
-      Delete board
-    </a>
-  </div>
-</div>
-
-<dl>
-  <dt>
-    Name
-  </dt>
-  <dd>
-    <%= @the_board.name %>
-  </dd>
-
-  <dt>
-    Created at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@the_board.created_at) %> ago
-  </dd>
-
-  <dt>
-    Updated at
-  </dt>
-  <dd>
-    <%= time_ago_in_words(@the_board.updated_at) %> ago
-  </dd>
-</dl>
-
-<hr>
-
-
-<div>
-  <div>
-    <h2>
-      Edit board
-    </h2>
-
-    <form action="/modify_board/<%= @the_board.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_board.name %>">
-      </div>
-
-      <button>
-        Update board
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
