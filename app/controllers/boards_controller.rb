@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  def index
+  def index # I'm using this
     matching_boards = Board.all
 
     @list_of_boards = matching_boards.order({ :created_at => :desc })
@@ -7,17 +7,19 @@ class BoardsController < ApplicationController
     render({ :template => "boards/index" })
   end
 
-  def show
+  def show # I'm using this
     the_id = params.fetch("path_id")
 
     matching_boards = Board.where({ :id => the_id })
 
     @the_board = matching_boards.at(0)
 
+    @posts = @the_board.posts
+
     render({ :template => "boards/show" })
   end
 
-  def create
+  def create # I'm using this
     the_board = Board.new
     the_board.name = params.fetch("query_name")
 
