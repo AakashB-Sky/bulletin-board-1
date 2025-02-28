@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     render({ :template => "posts/show" })
   end
 
-  def create # I'm using this
+  def create # am using
     the_post = Post.new
     the_post.title = params.fetch("query_title")
     the_post.body = params.fetch("query_body")
