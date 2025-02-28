@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # homepage route
+  get("/", { :controller => "boards", :action => "index" })
+
   # Routes for the Board resource:
 
   # CREATE
