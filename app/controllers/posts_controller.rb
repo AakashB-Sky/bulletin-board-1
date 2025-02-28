@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  def index
+  def index # not using
     matching_posts = Post.all
 
     @list_of_posts = matching_posts.order({ :created_at => :desc })
@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     render({ :template => "posts/index" })
   end
 
-  def show
+  def show # not using
     the_id = params.fetch("path_id")
 
     matching_posts = Post.where({ :id => the_id })
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def update
+  def update # not using
     the_id = params.fetch("path_id")
     the_post = Post.where({ :id => the_id }).at(0)
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy # not using
     the_id = params.fetch("path_id")
     the_post = Post.where({ :id => the_id }).at(0)
 

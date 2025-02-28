@@ -32,7 +32,7 @@ class BoardsController < ApplicationController
     end
   end
 
-  def update
+  def update # not using
     the_id = params.fetch("path_id")
     the_board = Board.where({ :id => the_id }).at(0)
 
@@ -46,7 +46,7 @@ class BoardsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy # not using
     the_id = params.fetch("path_id")
     the_board = Board.where({ :id => the_id }).at(0)
 
