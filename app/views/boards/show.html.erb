@@ -40,7 +40,7 @@
 
 <hr>
 <!------------------------------ Active posts ------------------------------>
-<h2> Active Posts </h2>
+<h2> Active posts </h2>
 
 <table border="1">
   <tr>
@@ -50,12 +50,20 @@
     <th>Expires on</th>
   </tr>
 
+  <% @posts.each do |a_post| %>
+    <tr>
+      <td><%= a_post.title %></td>
+      <td><%= a_post.body %></td>
+      <td><%= a_post.created_at %></td>
+      <td><%= a_post.expires_on %></td>
+    </tr>
+  <% end %>
 
 </table>
 
 <hr>
 <!------------------------------ Expired posts ------------------------------>
-
+<h2> Expired posts </h2>
 
 <hr>
 <hr>
